@@ -1,0 +1,5 @@
+const mapFunction = function () {emit(this.customer, this.quantity); };
+
+const reduceFunction=function(keyItem, values){ return Array.sum(values);};
+
+db.status.mapReduce(mapFunction, reduceFunction,{out:'same'});
